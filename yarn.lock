@@ -817,7 +817,7 @@
 
 "@prisma/engines@4.6.1":
   version "4.6.1"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-4.6.1.tgz#ae31309cc0f600f2da22708697b3be4eb1e46f9e"
+  resolved "https://registry.npmjs.org/@prisma/engines/-/engines-4.6.1.tgz"
   integrity sha512-3u2/XxvxB+Q7cMXHnKU0CpBiUK1QWqpgiBv28YDo1zOIJE3FCF8DI2vrp6vuwjGt5h0JGXDSvmSf4D4maVjJdw==
 
 "@tsconfig/node10@^1.0.7":
@@ -871,7 +871,7 @@
 
 "@types/express@^4.17.13":
   version "4.17.14"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.14.tgz#143ea0557249bc1b3b54f15db4c81c3d4eb3569c"
+  resolved "https://registry.npmjs.org/@types/express/-/express-4.17.14.tgz"
   integrity sha512-TEbt+vaPFQ+xpxFLFssxUDXj5cWCxZJjIcB7Yg0k0GMHGtgtQgpvx/MUQUeAkNbA9AAGrwkAsoeItdTgS7FMyg==
   dependencies:
     "@types/body-parser" "*"
@@ -1736,7 +1736,7 @@ express-validator@^6.14.0:
 
 express@^4.17.3:
   version "4.18.2"
-  resolved "https://registry.yarnpkg.com/express/-/express-4.18.2.tgz#3fabe08296e930c796c19e3c516979386ba9fd59"
+  resolved "https://registry.npmjs.org/express/-/express-4.18.2.tgz"
   integrity sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==
   dependencies:
     accepts "~1.3.8"
@@ -2574,7 +2574,7 @@ negotiator@0.6.3:
 
 nodemon@^2.0.15:
   version "2.0.20"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.20.tgz#e3537de768a492e8d74da5c5813cb0c7486fc701"
+  resolved "https://registry.npmjs.org/nodemon/-/nodemon-2.0.20.tgz"
   integrity sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==
   dependencies:
     chokidar "^3.5.2"
