@@ -3,9 +3,6 @@ const prisma = new PrismaClient();
 
 
 const getUserById = async (userId: number) => {
-// if(userId == ){
-//   return 404;
-// }
     const user = await prisma.User.findMany({
         where: {
           id: userId,
