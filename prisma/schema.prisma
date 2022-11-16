@@ -22,7 +22,7 @@ model User {
 model is_liked {
   id       Int     @id(map: "is_liked_pk") @unique(map: "is_liked_id_uindex") @default(autoincrement())
   user_id  Int
-  run_id   Int
+  run_id   Int @unique
   is_liked Boolean @default(false)
   run      run     @relation(fields: [run_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "is_liked_run_id_fk")
   User     User    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "is_liked_user_id_fk")
