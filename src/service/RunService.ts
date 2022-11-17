@@ -10,8 +10,6 @@ const getRunInfo = async (userId: number) => {
   });
   console.log(isLiked);
 
-  // const map1 = isLiked.map((x: { is_liked: boolean }) => x.is_liked);
-
   const user = await prisma.run.findMany({
     where: { user_id: userId },
     select: {
@@ -46,7 +44,35 @@ const getRunInfo = async (userId: number) => {
   return data;
 };
 
-//run에서 모든 정보를 읽는데 is_liked의 테이블의 is_liked 컬럼을 조인해야함
+const updateLiked = async (isLikedId: number, userId: number, runId: number) => {
+  const selectId = await prisma.is_liked.findUnique({
+    where: { id: isLikedId },
+  });
+
+  if (selectId.user_id != userId || selectId.run_id != runId) {
+    throw 400;
+  }
+
+  const updateLiked = await prisma.is_liked.update({
+    where: {
+      id: isLikedId,
+    },
+    data: {
+      is_liked: true,
+    },
+  });
+
+  const data = {
+    id: updateLiked.id,
+    userId: updateLiked.user_id,
+    runId: updateLiked.run_id,
+    isLiked: updateLiked.is_liked,
+  };
+
+  return data;
+};
+
 export default {
   getRunInfo,
+  updateLiked,
 };
