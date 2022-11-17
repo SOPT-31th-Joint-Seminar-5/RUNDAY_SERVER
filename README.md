@@ -1,4 +1,4 @@
-![RUNDAY_SERVER] (![image](https://user-images.githubusercontent.com/78431728/202333442-ba9ffbbe-e579-4c29-b1f2-436b60a8df95.png))
+<img src="https://user-images.githubusercontent.com/78431728/202333442-ba9ffbbe-e579-4c29-b1f2-436b60a8df95.png" width="90%">
 
 
 ## 👟🏃 RUNDAY_SERVER 👟🏃
@@ -31,10 +31,12 @@
 <br>
 
 ## 🏃 Coding Convention 🏃
+
 <details markdown="1">
 <summary>네이밍</summary>
----
-### DB 이름
+
+### DB
+
 - DB 이름은 **UpperCamelCase**를 사용합니다.
 
 <br>
@@ -47,6 +49,7 @@
 - 기본 클래스 파일을 생성하거나 컴포넌트를 생성할 때는 약어 규칙에 따라 네이밍합니다.  
 
 ### 변수 네이밍
+
 - `사진` → photo
 - `유저` → user 
 - `배열을 담은 변수`→ ~s(복수형)
@@ -71,6 +74,7 @@
 ```
 
 ## ✨ Github Management
+
 <details>
 <summary> ✨ Gitflow ✨ </summary>
 <div markdown="1">  
@@ -102,6 +106,7 @@
 	
 ### 💡 이슈, PR 규칙
 ---
+	
 #### 📌 Issue명 = PR명
 - [FEAT] - 기능 구현
 - [FIX] - 버그 수정
