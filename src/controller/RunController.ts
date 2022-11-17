@@ -19,7 +19,6 @@ const getRunInfo = async (req: Request, res: Response) => {
   }
 };
 
-
 /**
  * @route UPDATE /run/:isLikedId
  * @Desc Update isLiked
@@ -34,8 +33,6 @@ const updateLiked = async (req: Request, res: Response) => {
     return res.status(400).json({ status: 400, message: "BAD_REQUEST" });
   }
   try {
-    console.log(isLikedId);
-    
     const data = await runService.updateLiked(+isLikedId, userId, runId);
 
     return res.status(200).json({ status: 200, message: "유저 업데이트 성공", data });
