@@ -1,4 +1,4 @@
-![RUNDAY_SERVER] (notion://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcb141457-1cb7-4096-a67e-1f5ecd102b7c%2Frunday_og.png?table=block&id=e788b7f8-f799-42d4-aa0d-83d61e4ec191&spaceId=e98f5f06-3521-4082-855b-c7bb0c1c2e3c&width=1600&userId=51bc35bc-c88c-4ee8-bd99-fa68c9e43db7&cache=v2)
+![RUNDAY_SERVER] (![image](https://user-images.githubusercontent.com/78431728/202333442-ba9ffbbe-e579-4c29-b1f2-436b60a8df95.png))
 
 
 ## 👟🏃 RUNDAY_SERVER 👟🏃
@@ -135,6 +135,7 @@
 ## <strong> ERD & Directory Tree</strong>
 <details>
 <summary>🗄 ERD</summary>
+
 ![image](https://user-images.githubusercontent.com/78431728/202331284-12894f7d-81c4-40f1-92cd-c0afe4aaa63a.png)
 
 </details>
