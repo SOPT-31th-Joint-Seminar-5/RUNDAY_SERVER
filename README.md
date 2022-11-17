@@ -31,7 +31,7 @@
 <br>
 
 ## 🏃 Coding Convention 🏃
-
+<br>
 <details markdown="1">
 <summary>네이밍</summary>
 
@@ -48,6 +48,8 @@
   - interface이름에 I를 붙이지 않습니다.
 - 기본 클래스 파일을 생성하거나 컴포넌트를 생성할 때는 약어 규칙에 따라 네이밍합니다.  
 
+<br>
+
 ### 변수 네이밍
 
 - `사진` → photo
@@ -58,6 +60,7 @@
 ---
 </details>
 
+<br>
 ## ✉️ Commit Convention
 
 ```
@@ -72,9 +75,9 @@
 [RENAME] 파일 이름, 변수명, 함수명 변경이 있을 때 사용합니다. 
 [REFACTOR] 전면 수정이 있을 때 사용합니다 
 ```
-
+<br>
 ## ✨ Github Management
-
+<br>
 <details>
 <summary> ✨ Gitflow ✨ </summary>
 <div markdown="1">  
@@ -116,7 +119,6 @@
 
 </details>
 
-
 <br>
 
 ### <strong> 🏃 APIs 🏃 </strong>
@@ -126,7 +128,6 @@
 |         |       유저 달리기 정보       |   민욱    |  ✅  |
 |   Run   |       좋아요 누르기       |   민욱    |  ✅  |
 |         |       좋아요 취소       |   유진    |  ✅  |
-
 
 <br>
 
@@ -144,7 +145,7 @@
 ![image](https://user-images.githubusercontent.com/78431728/202331284-12894f7d-81c4-40f1-92cd-c0afe4aaa63a.png)
 
 </details>
-
+<br>
 <details>
 <summary>📦 Directory Tree</summary>
 
@@ -152,5 +153,4 @@
 
 ```
 </details>
-
 <br>
