@@ -76,8 +76,10 @@
 [REFACTOR] 전면 수정이 있을 때 사용합니다 
 ```
 <br>
+
 ## ✨ Github Management
 <br>
+
 <details>
 <summary> ✨ Gitflow ✨ </summary>
 <div markdown="1">  
