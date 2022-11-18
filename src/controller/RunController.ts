@@ -14,20 +14,25 @@ const getRunInfo = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * @route UPDATE /like/delete/:isLikedId
+ * @Desc Update isLiked
+ * @Access public
+ */
 const deleteLike = async (req: Request, res: Response) => {
-  const { runId } = req.params;
-  const { userId } = req.body;
+  const { isLikedId } = req.params;
+  const userId  = req.body.userId;
+  const runId = req.body.runId
   
   console.log(userId);
 
-  if(!runId || !userId) {
-    return res.status(404).json({ status: 404, message: "NOT_FOUND" });
+  if(!runId || !userId || !isLikedId) {
+    return res.status(404).json({ status: 400, message: "BAD_REQUEST" });
   }
   try {
-    const data = await runService.deleteLike(+runId, +userId);
+    const data = await runService.deleteLike(+isLikedId, +runId, +userId);
     res.status(200).json({ status: 200, message: "좋아요 취소", data });
   } catch (error) {
-    console.log("ERORROR", error)
     if (error == 404) {
       return res.status(404).json({ status: 404, message: "NOT_FOUND" });
     }

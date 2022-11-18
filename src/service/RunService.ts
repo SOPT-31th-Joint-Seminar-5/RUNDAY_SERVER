@@ -8,7 +8,6 @@ const getRunInfo = async (userId: number) => {
       is_liked: true,
     },
   });
-  // const map1 = isLiked.map((x: { is_liked: boolean }) => x.is_liked);
 
   const user = await prisma.run.findMany({
     where: { user_id: userId },
@@ -46,8 +45,39 @@ const getRunInfo = async (userId: number) => {
   return data;
 };
 
-const deleteLike = async(runId: number, userId: number) => {
+const deleteLike = async(isLikedId: number, runId: number, userId: number) => {
+  console.log(isLikedId, runId, userId);
   
+  const selectId = await prisma.is_liked.findUnique({
+    where: { id: isLikedId },
+  });
+  
+  console.log(selectId);
+  
+  if (selectId.user_id != userId || selectId.run_id != runId) {
+    throw 400;
+  }
+  
+  console.log("hihi");
+  const deleteLiked = await prisma.is_liked.update({
+    where: {
+      id: isLikedId,
+    },
+    data: {
+      is_liked: false,
+    },
+  });
+  
+  const data = {
+    id: deleteLiked.id,
+    userId: deleteLiked.user_id,
+    runId: deleteLiked.run_id,
+    isLiked: deleteLiked.is_liked,
+  };
+
+  return data;
+};
+
   // const findLikeId = await prisma.is_liked.findMany({
   //   where: { run_id: runId },
   //   select: {
@@ -72,37 +102,6 @@ const deleteLike = async(runId: number, userId: number) => {
   //   }),
   // );
   // console.log(joinLike);
-  const findLikeId = await prisma.is_liked.findUnique({
-    where: { run_id: runId },
-    select: {
-      id: true,
-      user_id: true,
-    },
-  });
-  
-  console.log(findLikeId.user_id);
-  if (!(findLikeId.user_id == userId)) {
-    throw 404;
-  }
-  
-  const joinLike = await prisma.is_liked.findUnique({
-      where: { user_id: userId, },
-      select: {
-        id:true
-      },
-    });
-  
-  console.log(joinLike);
-
-  
-  const delete_like = await prisma.is_liked.update({
-    where: { id: joinLike[0] },
-    data: {
-      is_liked: false,
-    },
-  });
-  return delete_like;
-}
 
 //run에서 모든 정보를 읽는데 is_liked의 테이블의 is_liked 컬럼을 조인해야함
 export default {

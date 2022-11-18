@@ -5,6 +5,6 @@ import { RunController } from "../controller";
 const router: Router = Router();
 
 router.get("/:userId", RunController.getRunInfo);
-router.put("/delete/:runId", RunController.deleteLike);
+router.put("/like/delete/:isLikedId", RunController.deleteLike);
 
 export default router;
