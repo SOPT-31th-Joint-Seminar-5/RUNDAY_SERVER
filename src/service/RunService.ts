@@ -45,39 +45,6 @@ const getRunInfo = async (userId: number) => {
   return data;
 };
 
-const deleteLike = async(isLikedId: number, runId: number, userId: number) => {
-  console.log(isLikedId, runId, userId);
-  
-  const selectId = await prisma.is_liked.findUnique({
-    where: { id: isLikedId },
-  });
-  
-  console.log(selectId);
-  
-  if (selectId.user_id != userId || selectId.run_id != runId) {
-    throw 400;
-  }
-  
-  console.log("hihi");
-  const deleteLiked = await prisma.is_liked.update({
-    where: {
-      id: isLikedId,
-    },
-    data: {
-      is_liked: false,
-    },
-  });
-  
-  const data = {
-    id: deleteLiked.id,
-    userId: deleteLiked.user_id,
-    runId: deleteLiked.run_id,
-    isLiked: deleteLiked.is_liked,
-  };
-
-  return data;
-};
-
   // const findLikeId = await prisma.is_liked.findMany({
   //   where: { run_id: runId },
   //   select: {
