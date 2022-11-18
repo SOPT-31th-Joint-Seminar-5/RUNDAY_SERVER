@@ -35,7 +35,7 @@ const updateLiked = async (req: Request, res: Response) => {
   try {
     const data = await runService.updateLiked(+isLikedId, userId, runId);
 
-    return res.status(200).json({ status: 200, message: "유저 업데이트 성공", data });
+    return res.status(200).json({ status: 200, message: "좋아요 누르기 성공", data });
   } catch (error) {
     if (error == 400) {
       return res.status(400).json({ status: 404, message: "NOT_FOUND" });
