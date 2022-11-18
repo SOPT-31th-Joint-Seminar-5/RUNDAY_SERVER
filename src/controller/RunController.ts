@@ -23,8 +23,6 @@ const deleteLike = async (req: Request, res: Response) => {
   const { isLikedId } = req.params;
   const userId  = req.body.userId;
   const runId = req.body.runId
-  
-  console.log(userId);
 
   if(!runId || !userId || !isLikedId) {
     return res.status(404).json({ status: 400, message: "BAD_REQUEST" });
