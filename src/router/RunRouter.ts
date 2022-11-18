@@ -6,5 +6,6 @@ const router: Router = Router();
 
 router.get("/:userId", RunController.getRunInfo);
 router.put("/like/:isLikedId", RunController.updateLiked);
+router.put("/like/delete/:isLikedId", RunController.deleteLike);
 
 export default router;

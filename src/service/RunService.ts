@@ -5,6 +5,7 @@ const prisma = new PrismaClient();
 달리기 정보 가져오기
 */
 const getRunInfo = async (userId: number) => {
+
   //달리기 정보를 조회할 때 is_liked 테이블을 따로 빼줬으므로 response 값에 담기위해 정보 조인해서 가져오기.
   const user = await prisma.run.findMany({
     orderBy: [ //id별로 오름차순 정렬
@@ -41,12 +42,45 @@ const getRunInfo = async (userId: number) => {
       return customUser;
     }),
   );
+  
   const data = {
     user: customUsers,
   };
+  
   return data;
 };
 
+/*
+좋아요 취소
+*/
+const deleteLike = async(isLikedId: number, runId: number, userId: number) => {
+  
+  const selectId = await prisma.is_liked.findUnique({
+    where: { id: isLikedId },
+  });
+  
+  if (selectId.user_id != userId || selectId.run_id != runId) {
+    throw 400;
+  }
+  
+  const deleteLiked = await prisma.is_liked.update({
+    where: {
+      id: isLikedId,
+    },
+    data: {
+      is_liked: false,
+    },
+  });
+  
+  const data = {
+    id: deleteLiked.id,
+    userId: deleteLiked.user_id,
+    runId: deleteLiked.run_id,
+    isLiked: deleteLiked.is_liked,
+  };
+
+  return data;
+};
 
 /*
 좋아요 누르기
@@ -87,4 +121,5 @@ const updateLiked = async (isLikedId: number, userId: number, runId: number) => 
 export default {
   getRunInfo,
   updateLiked,
+  deleteLike,
 };
