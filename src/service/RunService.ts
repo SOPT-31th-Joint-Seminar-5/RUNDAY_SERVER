@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 const getRunInfo = async (userId: number) => {
 
   //달리기 정보를 조회할 때 is_liked 테이블을 따로 빼줬으므로 response 값에 담기위해 정보 조인해서 가져오기.
-  const user = await prisma.run.findMany({
+  const run1 = await prisma.run.findMany({
     orderBy: [ //id별로 오름차순 정렬
       {
         id: "asc",
@@ -19,6 +19,7 @@ const getRunInfo = async (userId: number) => {
       title: true,
       routine: true,
       stage: true,
+      time: true,
       is_liked: { //join
         select: {
           is_liked: true,
@@ -29,25 +30,24 @@ const getRunInfo = async (userId: number) => {
 
   //async await 구문은 배열을 인자로 받을 수 없음! 따라서 Promise.all과 map을 사용하여 처리할 수 있음!
   //참고 => https://velog.io/@minsangk/2019-09-06-0209-%EC%9E%91%EC%84%B1%EB%90%A8-eik06xy8mm
-  const customUsers = await Promise.all(
-    user.map(async (user: any) => {
+  const run = await Promise.all(
+    run1.map(async (run: any) => {
       const customUser = {
-        id: user.id,
-        title: user.title,
-        routine: user.routine,
-        stage: user.stage,
-        is_liked: user.is_liked.pop().is_liked,
+        id: run.id,
+        title: run.title,
+        routine: run.routine,
+        stage: run.stage,
+        highlight: run.time,
+        is_liked: run.is_liked.is_liked,
       };
+      
 
       return customUser;
     }),
   );
   
-  const data = {
-    user: customUsers,
-  };
   
-  return data;
+  return run;
 };
 
 /*
